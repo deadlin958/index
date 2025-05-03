@@ -1,1 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitnes Clube</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: right;
+            margin: full-width;
+            padding: 0 20px;
+            position: fixed;
+            transition: top 0.3s;}
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+            
+
+       
+        .logo {
+            font-size: 24px;
+        }   
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            text-align: right;
+            margin-right: 30px;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: white;
+        }
+
+        .btn {
+            background-color: #6eed7b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #5cbf6a;
+        }
+
+        .plans {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .plan {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+        }
+
+        .plan h3 {
+            margin: 0 0 10px;
+        }
+
+        .plan p {
+            font-size: 17px;
+            margin: 0 0 20px;
+        }
+
+        .plan a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #6eed7b;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .plan a:hover {
+            background-color: #5cbf6a;
+        }
+
+        #calorieCalculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+        #calorieCalculator h2 {
+            margin-top: 0;
+        }
+
+        #calorieCalculator label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #calorieCalculator input,
+        #calorieCalculator select {
+            width: flex;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #calorieCalculator button {
+            background-color: #6eed7b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #calorieCalculator button:hover {
+            background-color: #5cbf6a;
+        }
+
+        #calorie-result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #membership {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+        #membership h2 {
+            margin-top: 10;
+        }
+
+        #membership form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #membership input,
+        #membership textarea {
+            width: flex;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #membership button {
+            background-color: #6eed7b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #membership button:hover {
+            background-color: #5cbf6a;
+        }
+
+        #membership .plans {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #membership .plan {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #membership .plan h3 {
+            margin: 0 0 10px;
+            color: #f4f4f4;
+        }
+
+        #membership .plan p {
+            color: #f9fafb;
+            font-size: 17px;
+            margin: 0 0 20px;
+        }
+
+        #membership .plan a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #6eed7b;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        #membership .plan a:hover {
+            background-color: #5cbf6a;
+        }
+
+        #about {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+        #about h2 {
+            margin-top: 0;
+        }
+
+        #about p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        #calorieResult {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- add a simple header -->
+    <header>
+        <nav id="nav" class="nav">
+            <div class="logo">
+                <img src="logo.png" alt="Gym Logo"
+                    style="width: 50px; height: 50px; vertical-align: middle; margin-right: 10px; ">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#calorieCalculator">Calorie Calculator</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#membership">Membership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- get user information for calorie calculate -->
+    <section id="calorieCalculator">
+        <h2>Calorie Burn Calculator</h2>
+        <label for="intensity">Select Workout Intensity:</label>
+        <select name="intensity" id="intensitySelect"></select><BR>
+
+        <label for="duration">Workout Duration (In minutes):</label>
+        <input type="number" id="duration" min="1" placeholder="e.g., 30">
+
+        <button onclick="calculateCalories()">Calculate Calories Burned</button>
+        <p id="calorieResult"></p>
+    </section>
+<!-- In this section i added  input information section from customer for send the mail-->
+    <section id="membership">
+
+        <p>Fill this form for new Inquiry</p>
+        <form id="mmembership">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <!-- plans for mamberships  -->
+        <h2>Membership Plans</h2>
+        <p>Choose a plan that suits you best.</p>
+        <div class="plans">
+            <div class="plan" id="basicPlan" style="background-image: url('img1.jpg');">
+                <h3>Basic</h3>
+                <p>$29/month</p>
+                <a href="#contact" class="btn">Sign Up</a>
+            </div>
+            <div class="plan" id="premiumPlan" style="background-image: url('img2.jpg')">
+                <h3>Premium</h3>
+                <p>$49/month</p>
+                <a href="#contact" class="btn">Sign Up</a>
+            </div>
+            <div class="plan" id="vipPlan" style="background-image: url('img3.jpg');">
+                <h3>VIP</h3>
+                <p>$69/month</p>
+                <a href="#contact" class="btn">Sign Up</a>
+            </div>
+        </div>
+    </section>
+<!-- Add some content about gym  -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At GymFit, we provide the best facilities and trainers to help you achieve your fitness goals.</p>
+        <p>Our mission is to create a supportive and motivating environment for all our members.</p>
+        <p>Join us today and start your fitness journey!</p>
+        <p>We offer a variety of classes, personal training sessions, and state-of-the-art equipment to help you reach your goals.</p>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2023 GymFit. All rights reserved.</p>
+    </footer>
+
+    <!-- java script for the functions -->
+    <script>
+        // below code will work as a Calorie Calculator
+        const intensitySelect = document.getElementById('intensitySelect');
+        const calorieResult = document.getElementById('calorieResult');
+
+        const intensities = {
+            "Low": 3.5,
+            "Moderate": 5.0,
+            "High": 7.0
+        };
+
+        Object.keys(intensities).forEach(intensity => {
+            const option = document.createElement('option');
+            option.value = intensity;
+            option.textContent = intensity;
+            intensitySelect.appendChild(option);
+        });
+
+        // Function to calculate calories burned based on intensity and duration
+
+        function calculateCalories() {
+            const intensity = intensitySelect.value;
+            const duration = document.getElementById('duration').value;
+            if (intensity && duration) {
+                const caloriesBurned = intensities[intensity] * duration;
+                calorieResult.textContent = `Calories burned: ${caloriesBurned.toFixed(2)} kcal`;
+            } else {
+                calorieResult.textContent = 'Please select an intensity and enter a duration.';
+            }
+        }
+        // Function to handle form submission
+        let lastScrollTop = 0;
+        const nav = document.getElementById("nav");
+
+        // Add event listener to the form
+        window.addEventListener("scroll", function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll Down
+                nav.style.top = "-60px"; // Adjust this value based on your nav height
+            } else {
+                // Scroll Up
+                nav.style.top = "0";
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+
+</html>
